@@ -18,6 +18,15 @@ class GeneratingRoom
         return DbMap::getState($idRoom);
     }
 
+    public function setState($idRoom){
+
+        DbMap::setNewStateInDB($idRoom);
+    }
+
+    public function updateState(){
+
+        DbMap::updateAllState();
+    }
 
 
 }

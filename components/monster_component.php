@@ -2,4 +2,4 @@
 
 require_once "../models/object/GeneratingObject.php";
 
-$chest= GeneratingObject::getChest($_GET["id_room"]);
+$monster= GeneratingObject::getMonster($_GET["id_room"]);

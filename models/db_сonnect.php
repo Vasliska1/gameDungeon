@@ -1,12 +1,12 @@
 <?php
 
 
-//include('../config.php');
+include('../config.php');
 
-//use mysqli;
+
 
 function openDB()
-{/*
+{
     try {
         global $host;
         global $username;
@@ -14,14 +14,14 @@ function openDB()
 
         $mysql = new mysqli($host, $username, $password);
 
-        $sql = 'CREATE DATABASE gameForVk';
+        $sql = 'CREATE DATABASE game_vk';
 
-        if (!mysqli_query($mysql, "DESCRIBE gameForVk")) {
+        if (!mysqli_query($mysql, "DESCRIBE game_vk")) {
             mysqli_query($mysql, $sql);
         }
         $mysql->query("SET NAMES 'utf-8'");
 
-        $db = mysqli_select_db($mysql, 'gameForVk');
+        $db = mysqli_select_db($mysql, 'game_vk');
         if (!$db) {
             die ('Error select db : ' . mysqli_error());
         }
@@ -32,6 +32,6 @@ function openDB()
         die();
     }
 
-    return $mysql;*/
+    return $mysql;
 }
 
