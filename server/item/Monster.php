@@ -1,7 +1,7 @@
 <?php
 
 
-class Monster
+class Monster implements JsonSerializable
 {
 
     private $idRoom;
@@ -23,7 +23,10 @@ class Monster
         $this->power = $power;
         $this->decreaseStrength = $decreaseStrength;
     }
-
+    public function jsonSerialize()
+    {
+        return get_object_vars($this);
+    }
 
     /**
      * @return mixed
