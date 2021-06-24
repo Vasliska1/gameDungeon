@@ -17,7 +17,7 @@ class CreateRequest
         foreach ($array as $key => $value){
            $str =  $str.$key.'='.$value.'&';
         }
-        echo $str;
+
         return $str;
     }
 

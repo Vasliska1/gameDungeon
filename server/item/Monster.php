@@ -23,10 +23,7 @@ class Monster implements JsonSerializable
         $this->power = $power;
         $this->decreaseStrength = $decreaseStrength;
     }
-    public function jsonSerialize()
-    {
-        return get_object_vars($this);
-    }
+
 
     /**
      * @return mixed
@@ -92,6 +89,9 @@ class Monster implements JsonSerializable
     {
         $this->power = $power;
     }
-
+    public function jsonSerialize()
+    {
+        return get_object_vars($this);
+    }
 
 }

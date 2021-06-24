@@ -1,7 +1,7 @@
 <?php
 
 
-class Chest
+class Chest implements JsonSerializable
 
 {
     private $idRoom;
@@ -20,7 +20,10 @@ class Chest
         $this->rarity = $rarity;
         $this->points = $points;
     }
-
+    public function jsonSerialize()
+    {
+        return get_object_vars($this);
+    }
 
     /**
      * @return mixed

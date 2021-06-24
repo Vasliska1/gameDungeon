@@ -8,14 +8,6 @@ class RoomDbHelper
     {
 
 
-        /* $defaultMap->setId(1);
-         $defaultMap->setRoomObject("monster");
-         $defaultMap->setDown(22);
-         $defaultMap->setLeft(0);
-         $defaultMap->setRight(4);
-         $defaultMap->setUp(5);
-         $defaultMap->setIsFinish(false);
-         $defaultMap->setIsStart(true);*/
         $mysql = openDB();
 
 

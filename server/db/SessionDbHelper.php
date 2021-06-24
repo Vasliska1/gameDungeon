@@ -35,7 +35,7 @@ class SessionDbHelper
         $mysql = openDB();
         $sql = "SELECT `score` FROM session WHERE `id_session` = '" . $idSession . "' ";
         $result = mysqli_query($mysql, $sql);
-       $result = $result->fetch_array();
+        $result = $result->fetch_array();
         $score = new Score($idSession, $result["score"]);
         return $score;
     }
@@ -62,7 +62,6 @@ class SessionDbHelper
         }
         return $session_id;
     }
-
 
 
 }

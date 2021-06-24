@@ -1,35 +1,32 @@
 <?php
 
 
-class StateRoom
+class StateRoom implements JsonSerializable
 {
 
-    private $id_room;
+    private $idRoom;
     private $state;
-    private $id_session;
-    private $object_power;
+    private $idSession;
+    private $objectPower;
 
-    /**
-     * StateRoom constructor.
-     * @param $id_room
-     * @param $state
-     * @param $id_session
-     * @param $object_power
-     */
-    public function __construct($id_room, $state, $id_session, $object_power)
+
+    public function __construct($idRoom, $state, $idSession, $objectPower)
     {
-        $this->id_room = $id_room;
+        $this->idRoom = $idRoom;
         $this->state = $state;
-        $this->id_session = $id_session;
-        $this->object_power = $object_power;
+        $this->idSession = $idSession;
+        $this->objectPower = $objectPower;
     }
-
+    public function jsonSerialize()
+    {
+        return get_object_vars($this);
+    }
     /**
      * @return mixed
      */
     public function getIdRoom()
     {
-        return $this->id_room;
+        return $this->idRoom;
     }
 
     /**
@@ -45,7 +42,7 @@ class StateRoom
      */
     public function getIdSession()
     {
-        return $this->id_session;
+        return $this->idSession;
     }
 
     /**
@@ -53,7 +50,7 @@ class StateRoom
      */
     public function getObjectPower()
     {
-        return $this->object_power;
+        return $this->objectPower;
     }
 
 

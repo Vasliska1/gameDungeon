@@ -14,7 +14,7 @@ require_once "restart.php";
 
     p {
         line-height: 0.5em;
-        font-size: 3rem;
+        font-size: 2rem;
         text-align: center;
         font-family: 'Helvetica', serif;
     }
@@ -110,7 +110,7 @@ if ($state->getState() == "attack_monster") {
     ?>
     <p>Power monster is <?= $state->getObjectPower()+ $monster->getDecreaseStrength() ?>  </p>
     <p>Now we genesis of your hit....</p>
-    <p> Your hit = <?= $hitPlayer ?></p>
+    <p> Your hit = <?=$hit?> </p>
     <p> The power of your blow is less than the power of the monster</p>
     <p> The monster's strength is reduced by <?= $monster->getDecreaseStrength() ?></p>
     <p> Click on the monster again to attack</p>
@@ -120,8 +120,9 @@ if ($state->getState() == "attack_monster") {
 
 if ($state->getState() == "win_monster" ) {
     ?>
-    <p>Power monster is <?= $state->getObjectPower()  ?>  </p>
-    <p> Your hit = <?= $hitPlayer ?></p>
+    <p> Power monster is <?= $state->getObjectPower()  ?>  </p>
+    <p> Your hit = <?=$hit?> </p>
+    <p> It was <b><?= $monster->getType() ?></b> monster</p>
     <p> Your strength is greater than the strength of a monster - you have won</p>
     <p> Your get <b><?= $state->getObjectPower() ?></b> points </p>
 
