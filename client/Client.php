@@ -17,7 +17,6 @@ class Client
         $server_output = curl_exec($ch);
 
         curl_close ($ch);
-
         return json_decode($server_output);
 
     }

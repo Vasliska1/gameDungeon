@@ -4,7 +4,7 @@ require_once "../db/ItemDbHelper.php";
 require_once "../db/RoomDbHelper.php";
 require_once "../db/SessionDbHelper.php";
 require_once "../DbConnect.php";
-require_once "../config.php";
+require_once "../Config.php";
 require_once "../Repository.php";
 require_once "action/GetStateAction.php";
 require_once "action/AttackMonsterAction.php";
@@ -26,14 +26,12 @@ require_once "../../common/Chest.php";
 
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : null;
 $roomId = isset($_REQUEST['id_room']) ? $_REQUEST['id_room'] : null;
-$session = isset($_REQUEST['id_session'])? $_REQUEST['id_session'] : null ;
-$namePlayer = isset($_REQUEST['name_player']) ? $_REQUEST['name_player'] : null ;
+$session = isset($_REQUEST['id_session']) ? $_REQUEST['id_session'] : null;
+$namePlayer = isset($_REQUEST['name_player']) ? $_REQUEST['name_player'] : null;
 
-global $host;
-global $username;
-global $password;
 
-$db = new DbConnect($host, $username, $password);
+$config = new Config();
+$db = new DbConnect($config->getHost(), $config->getUsername(), $config->getPassword());
 $dbConnect = $db->openDb();
 
 $dbRoom = new RoomDbHelper($dbConnect);
@@ -48,11 +46,12 @@ try {
     echo json_encode($result->result, 16);
 } catch (Exception $ex) {
     http_response_code(500);
-    echo "Error:". $ex;
+    echo "Error:" . $ex;
 }
 
 
-function processRequest($repository, $action, $roomId, $session, $username) {
+function processRequest($repository, $action, $roomId, $session, $username)
+{
     $actionObject = null;
 
     switch ($action) {
@@ -63,7 +62,7 @@ function processRequest($repository, $action, $roomId, $session, $username) {
             $actionObject = new GetStateAction($repository, $roomId, $session, $username);
             break;
         case "enter_room":
-            $actionObject =  new EnterRoomAction($repository, $roomId, $session, $username);
+            $actionObject = new EnterRoomAction($repository, $roomId, $session, $username);
             break;
         case "open_chest":
             $actionObject = new OpenChestAction($repository, $roomId, $session, $username);
@@ -81,5 +80,4 @@ function processRequest($repository, $action, $roomId, $session, $username) {
             $actionObject = new RestartAction($repository, $roomId, $session, $username);
     }
     return $actionObject;
-  // echo json_encode($actionObject->processAction(), 16);
 }

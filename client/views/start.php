@@ -1,4 +1,12 @@
+<?php
+require_once "../components/session_component.php";
 
+if ($sessionCreate) {
+
+    header("Location: generate_room.php?id_room=1&action=enter_room");
+    exit;
+}
+?>
 
 <style>
     .start {
@@ -31,23 +39,6 @@
 
 </style>
 
-
-$POST["name"] != null {
-    //create session in SESSION
-// save username to DB
-// redirect -> generate_room.php?room_id=1&action=enter_room
-}
-
-<?php
-require_once "../components/session_component.php";
-
-if($sessionCreate){
-
-    header("Location: generate_room.php?id_room=1&action=enter_room");
-    exit;
-}
-
-?>
 
 <div class="start">
     <p>👽 Welcome to Emoji Dungeon Escape Game 👾</p>

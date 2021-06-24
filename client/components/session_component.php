@@ -1,9 +1,7 @@
 <?php
-define("ROOT_PATH", $_SERVER['DOCUMENT_ROOT']."/testVkontakte");
-
 require_once "../Client.php";
-$sessionCreate=false;
 
+$sessionCreate=false;
 
 if(isset($_GET["name_player"])){
     session_start();

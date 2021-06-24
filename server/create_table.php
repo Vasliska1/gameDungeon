@@ -97,8 +97,6 @@ COMMIT;
 EOS;
 
 
-
-
 $sql2 = <<<EOS
 use game_vk;
     SELECT power FROM monster;
@@ -107,14 +105,12 @@ EOS;
 
 echo "hello";
 
-require_once "config.php";
+require_once "Config.php";
 require_once "DbConnect.php";
 
-global $host;
-global $username;
-global $password;
+$config = new Config();
 
 
-$mysql = new mysqli($host, $username, $password);
-echo  $mysql->multi_query($sql);
+$mysql = new mysqli($config->getHost(), $config->getUsername(), $config->getPassword());
+echo $mysql->multi_query($sql);
 echo mysqli_error($mysql);

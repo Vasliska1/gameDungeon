@@ -27,7 +27,7 @@ class SessionDbHelper
         $sql = "SELECT `score` FROM session WHERE `id_session` = '" . $idSession . "' ";
         $result = mysqli_query($this->mysql, $sql);
         $result = $result->fetch_array();
-        if(empty($result)){
+        if (empty($result)) {
             throw new Exception("Cannot find score");
         }
         $score = new Score($idSession, $result["score"]);

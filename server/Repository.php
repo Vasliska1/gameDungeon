@@ -22,7 +22,8 @@ class Repository
 
     }
 
-    public function getMonster($idRoom){
+    public function getMonster($idRoom)
+    {
 
         return $this->dbItem->getMonsterFromDb($idRoom);
     }
@@ -51,7 +52,7 @@ class Repository
         $this->dbRoom->updateAllState($session);
     }
 
-    public function updatePowerObject($idRoom, $power, $session )
+    public function updatePowerObject($idRoom, $power, $session)
     {
 
         $this->dbRoom->updatePowerObject($idRoom, $power, $session);

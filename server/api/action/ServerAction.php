@@ -7,6 +7,7 @@ abstract class ServerAction
     protected $session;
     protected $username;
     protected $repository;
+
     /**
      * ServerAction constructor.
      * @param $roomId
@@ -25,8 +26,8 @@ abstract class ServerAction
 }
 
 
-
-class ActionResponse {
+class ActionResponse
+{
     public $code;
     public $result;
 

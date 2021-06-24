@@ -1,15 +1,15 @@
 <?php
 
 require_once "../components/game_state_component.php";
-
-require_once "score.php";
 require_once "restart.php";
+require_once "score.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <style>
     a {
-        text-decoration: none; /* Отменяем подчеркивание у ссылки */
+        text-decoration: none;
     }
 
     p {
