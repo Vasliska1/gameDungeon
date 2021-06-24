@@ -1,3 +1,3 @@
 <?php
 
-header("Location: views/start.php");
+header("Location: client/views/start.php");

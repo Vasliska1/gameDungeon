@@ -1,7 +1,7 @@
 <?php
 
 
-class DbObject
+class ItemDbHelper
 {
 
     public function getChestFromDb($idRoom)
@@ -12,17 +12,11 @@ class DbObject
         $mysql->query($sql);
        */
 
-
-        $chest = new Chest();
-        $chest->setIdRoom($idRoom);
-
-
         $sql = "SELECT * FROM chest WHERE `id_room` = '" . $idRoom . "' ";
-        if ($result = mysqli_query($mysql, $sql)) {
-            $result = $result->fetch_array();
-            $chest->setPoints($result["points"]);
-            $chest->setRarity($result["rarity"]);
-        }
+        $result = mysqli_query($mysql, $sql);
+        $result = $result->fetch_array();
+        $chest = new Chest($idRoom,  $result["rarity"],$result["points"]);
+
 
         return $chest;
     }
@@ -35,18 +29,16 @@ class DbObject
         /*$sql = "INSERT INTO monster (`id_room`, `type_monster`,`power`) VALUES (13, 'almighty', 16 )";
         $mysql->query($sql);
         */
-        $monster = new Monster();
-
-        $monster->setIdRoom($idRoom);
 
 
         $sql = "SELECT * FROM monster WHERE `id_room` = '" . $idRoom . "' ";
-        if ($result = mysqli_query($mysql, $sql)) {
-            $result = $result->fetch_array();
-            $monster->setType($result["type_monster"]);
-            $monster->setPower($result["power"]);
-        }
-        $monster->setDecreaseStrength(sqrt($monster->getPower()));
+        $result = mysqli_query($mysql, $sql);
+        $result = $result->fetch_array();
+
+
+        $monster = new Monster($idRoom, $result["type_monster"], $result["power"], sqrt($result["power"]));
+
+
         return $monster;
     }
 

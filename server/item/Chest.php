@@ -9,6 +9,20 @@ class Chest
     private $points;
 
     /**
+     * Chest constructor.
+     * @param $idRoom
+     * @param $rarity
+     * @param $points
+     */
+    public function __construct($idRoom, $rarity, $points)
+    {
+        $this->idRoom = $idRoom;
+        $this->rarity = $rarity;
+        $this->points = $points;
+    }
+
+
+    /**
      * @return mixed
      */
     public function getIdRoom()

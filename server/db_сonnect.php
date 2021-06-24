@@ -1,7 +1,7 @@
 <?php
+define("ROOT", $_SERVER['DOCUMENT_ROOT']."/testVkontakte");
 
-
-include('../config.php');
+include('config.php');
 
 
 

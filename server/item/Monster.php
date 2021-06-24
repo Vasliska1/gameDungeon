@@ -10,6 +10,22 @@ class Monster
     private $decreaseStrength;
 
     /**
+     * Monster constructor.
+     * @param $idRoom
+     * @param $type
+     * @param $power
+     * @param $decreaseStrength
+     */
+    public function __construct($idRoom, $type, $power, $decreaseStrength)
+    {
+        $this->idRoom = $idRoom;
+        $this->type = $type;
+        $this->power = $power;
+        $this->decreaseStrength = $decreaseStrength;
+    }
+
+
+    /**
      * @return mixed
      */
     public function getDecreaseStrength()

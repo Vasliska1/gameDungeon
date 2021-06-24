@@ -1,7 +1,7 @@
 <?php
 
 
-class DefaultMap
+class Room implements JsonSerializable
 {
 
     private $id;
@@ -15,6 +15,31 @@ class DefaultMap
     private $isFinish;
 
     /**
+     * Room constructor.
+     * @param $id
+     * @param $color
+     * @param $roomObject
+     * @param $left
+     * @param $right
+     * @param $up
+     * @param $down
+     * @param $isStart
+     * @param $isFinish
+     */
+    public function __construct($id, $roomObject, $left, $right, $up, $down, $isStart, $isFinish)
+    {
+        $this->id = $id;
+        $this->roomObject = $roomObject;
+        $this->left = $left;
+        $this->right = $right;
+        $this->up = $up;
+        $this->down = $down;
+        $this->isStart = $isStart;
+        $this->isFinish = $isFinish;
+    }
+
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -22,13 +47,6 @@ class DefaultMap
         return $this->id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getColor()
-    {
-        return $this->color;
-    }
 
     /**
      * @return mixed
@@ -160,5 +178,8 @@ class DefaultMap
         $this->isFinish = $isFinish;
     }
 
-
+    public function jsonSerialize()
+    {
+        return get_object_vars($this);
+    }
 }
