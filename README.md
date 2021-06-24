@@ -16,7 +16,7 @@ Vanila PHP
 /common - общие файлы(классы-модели)
 
 ### API:
-NonREST RCP OVER HTTP
+NonREST RPC OVER HTTP
 
 ## Описание запросов
 
@@ -53,6 +53,8 @@ BODY id_session
 Возвращает счет
 
 
+
+## Описание игры 
 
 
 
