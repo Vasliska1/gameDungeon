@@ -1,6 +1,13 @@
 <?php
 
 define("ROOT_PATH", $_SERVER['DOCUMENT_ROOT'] . "/testVkontakte");
+require_once "../../common/StateRoom.php";
+require_once "../../common/Score.php";
+require_once "../../common/Monster.php";
+require_once "../../common/Room.php";
+require_once "../../common/Session.php";
+require_once "../../common/Chest.php";
+
 
 require_once "../Client.php";
 
