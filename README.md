@@ -12,6 +12,7 @@
 ### PHP Framework:
 Vanila PHP
 
+### Структура
 /server - серверная часть проекта
 
 /client - клиентская
