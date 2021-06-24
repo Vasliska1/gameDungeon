@@ -11,14 +11,4 @@ class CreateRequest
 
     }
 
-    public function getBody($array){
-        $str ='';
-
-        foreach ($array as $key => $value){
-           $str =  $str.$key.'='.$value.'&';
-        }
-
-        return $str;
-    }
-
 }

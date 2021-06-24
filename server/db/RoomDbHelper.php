@@ -14,14 +14,10 @@ class RoomDbHelper
     public
     function getParamsMap($idRoom)
     {
-
-        //  $sql = "INSERT INTO map (`id`, `room_object`,`left_room`, `right_room`, `up_room`, `down_room`, `is_start`, `is_finish`) VALUES (15, 'none', 14, 0, 0, 0, '0', '1' )";
-        //$mysql->query($sql);
-
         $sql = "SELECT * FROM map WHERE `id` = '" . $idRoom . "' ";
         $result = mysqli_query($this->mysql, $sql);
 
-        if(mysqli_num_rows($result) == 0){
+        if(empty($result) ){
             throw new Exception("Cannot find room");
         }
 
@@ -29,7 +25,6 @@ class RoomDbHelper
         $map = new Room($result["id"], $result["room_object"], $result["left_room"], $result["right_room"], $result["up_room"], $result["down_room"], $result["is_start"], $result["is_finish"]);
 
         return $map;
-
     }
 
 
@@ -39,9 +34,8 @@ class RoomDbHelper
         $sql = "SELECT * FROM state_room WHERE (`id_room` = '" . $idRoom . "' AND `is_session` = '" . $sessionId . "') ";
         $result = mysqli_query($this->mysql, $sql);
         $result = $result->fetch_array();
-        if(mysqli_num_rows($result) == 0){
-            throw new Exception("Cannot find state");
-        }
+
+
         $state = new StateRoom($result["id_room"], $result["state_room"], $result["is_session"], $result["object_power"]);
 
         return $state;

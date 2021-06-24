@@ -15,7 +15,7 @@ class ItemDbHelper
         $sql = "SELECT * FROM chest WHERE `id_room` = '" . $idRoom . "' ";
         $result = mysqli_query($this->mysql, $sql);
         $result = $result->fetch_array();
-        if(mysqli_num_rows($result) == 0){
+        if(empty($result)){
             throw new Exception("Cannot find chest");
         }
         $chest = new Chest($idRoom,  $result["rarity"],$result["points"]);
@@ -28,7 +28,7 @@ class ItemDbHelper
         $sql = "SELECT * FROM monster WHERE `id_room` = '" . $idRoom . "' ";
         $result = mysqli_query($this->mysql, $sql);
         $result = $result->fetch_array();
-        if(mysqli_num_rows($result) == 0){
+        if(empty($result) ){
             throw new Exception("Cannot find monster");
         }
         $monster = new Monster($idRoom, $result["type_monster"], $result["power"], sqrt($result["power"]));

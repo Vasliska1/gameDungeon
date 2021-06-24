@@ -27,7 +27,7 @@ class SessionDbHelper
         $sql = "SELECT `score` FROM session WHERE `id_session` = '" . $idSession . "' ";
         $result = mysqli_query($this->mysql, $sql);
         $result = $result->fetch_array();
-        if(mysqli_num_rows($result) == 0){
+        if(empty($result)){
             throw new Exception("Cannot find score");
         }
         $score = new Score($idSession, $result["score"]);
@@ -36,14 +36,6 @@ class SessionDbHelper
 
     public function addNewSession($name)
     {
-        /* $sql = "CREATE TABLE session (
-          id_session int NOT NULL AUTO_INCREMENT,
-           name_player varchar(255),
-         score int,
-          PRIMARY KEY (id_session)
-     )AUTO_INCREMENT=1;";*/
-
-
         $sql = "INSERT INTO session (`name_player`, `score`) VALUES ( '" . $name . "', 0)";
 
         if (mysqli_query($this->mysql, $sql)) {
