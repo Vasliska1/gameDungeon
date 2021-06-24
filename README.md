@@ -61,6 +61,11 @@ BODY id_session
 # Скриншоты
 ![image](https://user-images.githubusercontent.com/57155484/123342901-49174700-d559-11eb-8641-cd8349946809.png)
 
+![image](https://user-images.githubusercontent.com/57155484/123343021-998ea480-d559-11eb-9610-ae4847cd5988.png)
+
+![image](https://user-images.githubusercontent.com/57155484/123343067-b034fb80-d559-11eb-8dc4-f5a399a50829.png)
+
+![image](https://user-images.githubusercontent.com/57155484/123343114-c478f880-d559-11eb-80a8-e2e7911da4ec.png)
 
 
 
