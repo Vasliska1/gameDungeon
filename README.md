@@ -7,18 +7,21 @@
 2) localhost:8080/testVkontakte/server/create_table.php
 3) https://localhost:8080/ (https://localhost:8080/testVkontakte/client/views/start.php) 
 
+## Описание проекта
+
 ### PHP Framework:
 Vanila PHP
 
-### Описание проекта
 /server - серверная часть проекта
+
 /client - клиентская
+
 /common - общие файлы(классы-модели)
 
 ### API:
 NonREST RPC OVER HTTP
 
-## Описание запросов
+### Описание запросов
 
 /api.php?action=get_room
 BODY id_room,id_session 
