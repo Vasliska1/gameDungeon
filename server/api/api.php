@@ -3,7 +3,7 @@
 require_once "../db/ItemDbHelper.php";
 require_once "../db/RoomDbHelper.php";
 require_once "../db/SessionDbHelper.php";
-require_once "../DbConnect.php";
+require_once "../db/DbConnect.php";
 require_once "../Config.php";
 require_once "../Repository.php";
 require_once "action/GetStateAction.php";
@@ -15,7 +15,6 @@ require_once "action/RestartAction.php";
 require_once "action/EnterRoomAction.php";
 require_once "action/GetRoomAction.php";
 require_once "action/ServerAction.php";
-
 require_once "../../common/StateRoom.php";
 require_once "../../common/Score.php";
 require_once "../../common/Monster.php";

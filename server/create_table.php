@@ -96,21 +96,15 @@ COMMIT;
 
 EOS;
 
-
-$sql2 = <<<EOS
-use game_vk;
-    SELECT power FROM monster;
-EOS;
-
-
-echo "hello";
-
 require_once "Config.php";
-require_once "DbConnect.php";
 
-$config = new Config();
+try {
+    $config = new Config();
+    $mysql = new mysqli($config->getHost(), $config->getUsername(), $config->getPassword());
+    if ($mysql->multi_query($sql))
+        echo "DB successfully create!";
+} catch (Exception $e) {
+    echo "Error to  create db: " . $e;
+}
 
 
-$mysql = new mysqli($config->getHost(), $config->getUsername(), $config->getPassword());
-echo $mysql->multi_query($sql);
-echo mysqli_error($mysql);
