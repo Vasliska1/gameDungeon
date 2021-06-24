@@ -6,7 +6,7 @@
 1) docker-compose up
 2) localhost:8080/testVkontakte/server/create_table.php (для создания базы данных)
 3) https://localhost:8080/ 
-4) 
+
 ## Описание проекта
 
 ### PHP Framework:
