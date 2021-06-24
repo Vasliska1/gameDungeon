@@ -25,8 +25,7 @@ NonREST RPC OVER HTTP
 ### Описание запросов
 
 /api.php?action=get_room
-BODY {id_room,id_session}
-
+BODY {id_room,id_session}  
 Возвращает комнату
 
 /api.php?action=get_state
